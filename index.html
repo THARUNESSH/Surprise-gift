@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Sametha ❤️</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background: radial-gradient(circle at center, #351342, #120719 70%);
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .page {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 650px;
+            padding: 40px 25px;
+            border-radius: 25px;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 0 40px rgba(255,80,160,0.2);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #f4ddea;
+        }
+
+        .heart {
+            font-size: 70px;
+            animation: heartbeat 1.5s infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            background: #ff4f9a;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 5px 20px rgba(255,79,154,0.4);
+        }
+
+        button:hover {
+            transform: scale(1.06);
+            background: #ff75b1;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .fade {
+            animation: fadeIn 1.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message {
+            margin-top: 25px;
+        }
+
+        .signature {
+            margin-top: 25px;
+            font-size: 22px;
+            color: #ff9bc6;
+        }
+
+        .music-box {
+            margin-top: 30px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 315px;
+            border: none;
+            border-radius: 18px;
+            margin-top: 20px;
+        }
+
+        .floating-heart {
+            position: fixed;
+            bottom: -30px;
+            font-size: 20px;
+            animation: floatUp 7s linear infinite;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        @keyframes floatUp {
+            from {
+                transform: translateY(0);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-110vh);
+                opacity: 0;
+            }
+        }
+
+        .small {
+            font-size: 14px;
+            margin-top: 15px;
+            color: #c9a9bd;
+        }
+
+        @media(max-width:600px) {
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 25px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            iframe {
+                height: 220px;
+            }
+
+            .card {
+                padding: 30px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating hearts -->
+    <div class="floating-heart" style="left:10%; animation-delay:0s;">❤️</div>
+    <div class="floating-heart" style="left:25%; animation-delay:2s;">💗</div>
+    <div class="floating-heart" style="left:45%; animation-delay:4s;">💕</div>
+    <div class="floating-heart" style="left:65%; animation-delay:1s;">❤️</div>
+    <div class="floating-heart" style="left:85%; animation-delay:3s;">💖</div>
+
+
+    <!-- FIRST PAGE -->
+    <section class="page" id="firstPage">
+
+        <div class="card fade">
+
+            <div class="heart">❤️</div>
+
+            <h1>Hey Sametha...</h1>
+
+            <p>
+                I made something small for you.
+                <br>
+                Nothing complicated...
+                just something from me to you.
+            </p>
+
+            <button onclick="openGift()">
+                Open Your Little Gift 🎁
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- MESSAGE PAGE -->
+    <section class="page hidden" id="messagePage">
+
+        <div class="card fade">
+
+            <div class="heart">🌙</div>
+
+            <h2>Take a little breath...</h2>
+
+            <div class="message">
+
+                <p>
+                    Hey Sametha ❤️
+                    <br><br>
+
+                    I don't know what might be going through
+                    your mind right now, but I just want you
+                    to stop for a moment.
+                    <br><br>
+
+                    Take a deep breath.
+                    <br>
+                    Relax your mind.
+                    <br>
+                    Forget everything for a few minutes.
+                    <br><br>
+
+                    You don't have to solve everything today.
+                    Sometimes it's okay to simply breathe,
+                    rest and let things be for a while.
+                    <br><br>
+
+                    And whenever things feel a little too much,
+                    remember that there are people who genuinely
+                    care about you.
+                    <br><br>
+
+                    I may not always know the perfect words,
+                    but I hope this little surprise can at least
+                    put a small smile on your face. ❤️
+                </p>
+
+                <div class="signature">
+                    — Tharun ❤️
+                </div>
+
+            </div>
+
+            <button onclick="showFinal()">
+                One Last Thing... ✨
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL PAGE -->
+    <section class="page hidden" id="finalPage">
+
+        <div class="card fade">
+
+            <div class="heart">🌹</div>
+
+            <h2>For You, Sametha ❤️</h2>
+
+            <p>
+                Whatever happens,
+                don't forget to take care of yourself.
+                <br><br>
+
+                Smile a little.
+                Relax a little.
+                And don't overthink everything.
+                ❤️
+                <br><br>
+
+                I made this little page just hoping
+                it would make your day a little better.
+            </p>
+
+            <div class="signature">
+                With love,<br>
+                Tharun ❤️
+            </div>
+
+            <div class="music-box">
+
+                <p>
+                    And now...
+                    <br>
+                    this song is for you 🎵
+                </p>
+
+                <button onclick="playSong()">
+                    ▶ Play Your Song
+                </button>
+
+                <div id="youtube" class="hidden">
+
+                    <iframe
+                        src="https://www.youtube.com/embed/46-RBvJpPVE?autoplay=1"
+                        title="A song for Sametha"
+                        allow="autoplay; encrypted-media"
+                        allowfullscreen>
+                    </iframe>
+
+                </div>
+
+                <p class="small">
+                    A little song from Tharun ❤️
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script>
+
+        function openGift() {
+
+            document.getElementById("firstPage").classList.add("hidden");
+
+            document.getElementById("messagePage").classList.remove("hidden");
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+
+
+        function showFinal() {
+
+            document.getElementById("messagePage").classList.add("hidden");
+
+            document.getElementById("finalPage").classList.remove("hidden");
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+
+
+        function playSong() {
+
+            document.getElementById("youtube").classList.remove("hidden");
+
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: "smooth"
+            });
+
+        }
+
+    </script>
+
+</body>
+</html>
