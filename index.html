@@ -1,389 +1,630 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Samentha ❤️</title>
 
-    <title>For Sametha ❤️</title>
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+body {
+    background: #050507;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
 
-        body {
-            min-height: 100vh;
-            background: radial-gradient(circle at center, #351342, #120719 70%);
-            color: white;
-            font-family: Arial, sans-serif;
-            overflow-x: hidden;
-        }
+.screen {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+    background:
+        radial-gradient(circle at center, #351425 0%, #09070b 55%, #030304 100%);
+}
 
-        .page {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 25px;
-            text-align: center;
-        }
+.screen.active {
+    display: flex;
+    animation: fadeIn 1.2s ease;
+}
 
-        .card {
-            width: 100%;
-            max-width: 650px;
-            padding: 40px 25px;
-            border-radius: 25px;
-            background: rgba(255,255,255,0.08);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 0 40px rgba(255,80,160,0.2);
-            border: 1px solid rgba(255,255,255,0.15);
-        }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(1.03);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 
-        h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-        }
+h1 {
+    font-size: clamp(32px, 8vw, 65px);
+    line-height: 1.15;
+}
 
-        h2 {
-            font-size: 30px;
-            margin-bottom: 20px;
-        }
+h2 {
+    font-size: clamp(23px, 6vw, 38px);
+    line-height: 1.4;
+}
 
-        p {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #f4ddea;
-        }
+p {
+    font-size: clamp(17px, 4.5vw, 23px);
+    line-height: 1.7;
+}
 
-        .heart {
-            font-size: 70px;
-            animation: heartbeat 1.5s infinite;
-            margin-bottom: 20px;
-        }
+.glow {
+    text-shadow:
+        0 0 10px #fff,
+        0 0 25px #ff80c8,
+        0 0 50px #ff4fac;
+}
 
-        @keyframes heartbeat {
-            0%, 100% {
-                transform: scale(1);
-            }
+.small {
+    margin-top: 20px;
+    opacity: .75;
+    font-size: 16px;
+}
 
-            50% {
-                transform: scale(1.2);
-            }
-        }
+button {
+    border: none;
+    border-radius: 50px;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: .4s;
+}
 
-        button {
-            margin-top: 30px;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 30px;
-            background: #ff4f9a;
-            color: white;
-            font-size: 17px;
-            cursor: pointer;
-            transition: 0.3s;
-            box-shadow: 0 5px 20px rgba(255,79,154,0.4);
-        }
+button:hover {
+    transform: scale(1.08);
+}
 
-        button:hover {
-            transform: scale(1.06);
-            background: #ff75b1;
-        }
+.yes {
+    background: white;
+    color: #111;
+    box-shadow: 0 0 25px rgba(255,255,255,.5);
+}
 
-        .hidden {
-            display: none;
-        }
+.no {
+    background: #202024;
+    color: white;
+}
 
-        .fade {
-            animation: fadeIn 1.5s ease;
-        }
+.music {
+    background: #ff6db6;
+    color: white;
+    box-shadow: 0 0 25px rgba(255,80,170,.5);
+}
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
+.swipe {
+    position: absolute;
+    bottom: 45px;
+    opacity: .8;
+    animation: float 1.6s infinite;
+}
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+@keyframes float {
+    50% {
+        transform: translateY(-12px);
+    }
+}
 
-        .message {
-            margin-top: 25px;
-        }
+.heart {
+    font-size: 100px;
+    animation: heartbeat 1.4s infinite;
+}
 
-        .signature {
-            margin-top: 25px;
-            font-size: 22px;
-            color: #ff9bc6;
-        }
+@keyframes heartbeat {
+    50% {
+        transform: scale(1.18);
+    }
+}
 
-        .music-box {
-            margin-top: 30px;
-        }
+.love-text {
+    min-height: 70px;
+}
 
-        iframe {
-            width: 100%;
-            height: 315px;
-            border: none;
-            border-radius: 18px;
-            margin-top: 20px;
-        }
+.proposal {
+    max-width: 750px;
+}
 
-        .floating-heart {
-            position: fixed;
-            bottom: -30px;
-            font-size: 20px;
-            animation: floatUp 7s linear infinite;
-            opacity: 0.7;
-            pointer-events: none;
-        }
+.buttons {
+    margin-top: 25px;
+}
 
-        @keyframes floatUp {
-            from {
-                transform: translateY(0);
-                opacity: 0;
-            }
+.photo {
+    width: min(82vw, 500px);
+    max-height: 48vh;
+    object-fit: cover;
+    border-radius: 25px;
+    margin: 25px 0;
+    box-shadow:
+        0 0 20px rgba(255,255,255,.2),
+        0 0 60px rgba(255,80,180,.25);
+    animation: photoReveal 2s ease;
+}
 
-            20% {
-                opacity: 0.8;
-            }
+@keyframes photoReveal {
+    from {
+        opacity: 0;
+        transform: scale(.75);
+        filter: blur(10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
 
-            100% {
-                transform: translateY(-110vh);
-                opacity: 0;
-            }
-        }
+.countdown {
+    margin-top: 15px;
+    font-size: 17px;
+    opacity: .65;
+}
 
-        .small {
-            font-size: 14px;
-            margin-top: 15px;
-            color: #c9a9bd;
-        }
+.promise {
+    max-width: 720px;
+}
 
-        @media(max-width:600px) {
+.final-heart {
+    font-size: 90px;
+    animation: heartbeat 1.4s infinite;
+}
 
-            h1 {
-                font-size: 32px;
-            }
+.hidden {
+    display: none !important;
+}
 
-            h2 {
-                font-size: 25px;
-            }
+/* Stars */
+.star {
+    position: fixed;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    opacity: .6;
+    animation: twinkle 2s infinite alternate;
+    pointer-events: none;
+}
 
-            p {
-                font-size: 16px;
-            }
-
-            iframe {
-                height: 220px;
-            }
-
-            .card {
-                padding: 30px 18px;
-            }
-        }
-    </style>
+@keyframes twinkle {
+    from { opacity: .15; }
+    to { opacity: 1; }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- Floating hearts -->
-    <div class="floating-heart" style="left:10%; animation-delay:0s;">❤️</div>
-    <div class="floating-heart" style="left:25%; animation-delay:2s;">💗</div>
-    <div class="floating-heart" style="left:45%; animation-delay:4s;">💕</div>
-    <div class="floating-heart" style="left:65%; animation-delay:1s;">❤️</div>
-    <div class="floating-heart" style="left:85%; animation-delay:3s;">💖</div>
+<!-- =====================================
+     1. BIRTHDAY
+===================================== -->
+
+<section id="birthday" class="screen active">
+
+    <h1 class="glow">
+        Happy Birthday,<br>
+        Samentha ❤️
+    </h1>
+
+    <p style="margin-top:25px;">
+        I made something for you...
+    </p>
+
+    <div class="swipe">
+        👆 Swipe or tap anywhere
+    </div>
+
+</section>
 
 
-    <!-- FIRST PAGE -->
-    <section class="page" id="firstPage">
+<!-- =====================================
+     2. I LOVE YOU
+===================================== -->
 
-        <div class="card fade">
+<section id="love" class="screen">
 
-            <div class="heart">❤️</div>
+    <div class="heart">🤍</div>
 
-            <h1>Hey Sametha...</h1>
+    <h1 class="love-text glow" id="loveText"></h1>
 
-            <p>
-                I made something small for you.
-                <br>
-                Nothing complicated...
-                just something from me to you.
-            </p>
+</section>
 
-            <button onclick="openGift()">
-                Open Your Little Gift 🎁
+
+<!-- =====================================
+     3. PROPOSAL
+===================================== -->
+
+<section id="proposal" class="screen">
+
+    <div class="proposal">
+
+        <p>
+            Since it's your birthday...
+        </p>
+
+        <br>
+
+        <h2>
+            Can I ask you something I've
+            wanted to say? ❤️
+        </h2>
+
+        <br>
+
+        <h1>
+            Will you be my girlfriend?
+        </h1>
+
+        <div class="buttons">
+
+            <button class="yes" onclick="acceptProposal()">
+                YES ❤️
+            </button>
+
+            <button
+                class="no"
+                id="noButton"
+                onclick="hideNo()">
+                NO
             </button>
 
         </div>
 
-    </section>
+        <p class="small">
+            Take your time. ❤️
+        </p>
+
+    </div>
+
+</section>
 
 
-    <!-- MESSAGE PAGE -->
-    <section class="page hidden" id="messagePage">
+<!-- =====================================
+     4. ACCEPTED
+===================================== -->
 
-        <div class="card fade">
+<section id="accepted" class="screen">
 
-            <div class="heart">🌙</div>
+    <h1 class="glow">
+        Your Proposal<br>
+        Accepted ❤️
+    </h1>
 
-            <h2>Take a little breath...</h2>
+    <!-- YOUR ONE PHOTO -->
+    <img
+        src="our-photo.jpg"
+        class="photo"
+        alt="Our photo"
+    >
 
-            <div class="message">
+    <p>
+        And just like that...<br>
+        a new chapter begins. 🤍
+    </p>
 
-                <p>
-                    Hey Sametha ❤️
-                    <br><br>
+    <p class="countdown" id="countdown">
+        Something else is waiting...
+    </p>
 
-                    I don't know what might be going through
-                    your mind right now, but I just want you
-                    to stop for a moment.
-                    <br><br>
+</section>
 
-                    Take a deep breath.
-                    <br>
-                    Relax your mind.
-                    <br>
-                    Forget everything for a few minutes.
-                    <br><br>
 
-                    You don't have to solve everything today.
-                    Sometimes it's okay to simply breathe,
-                    rest and let things be for a while.
-                    <br><br>
+<!-- =====================================
+     5. PROMISE
+===================================== -->
 
-                    And whenever things feel a little too much,
-                    remember that there are people who genuinely
-                    care about you.
-                    <br><br>
+<section id="promise" class="screen">
 
-                    I may not always know the perfect words,
-                    but I hope this little surprise can at least
-                    put a small smile on your face. ❤️
-                </p>
+    <div class="promise">
 
-                <div class="signature">
-                    — Tharun ❤️
-                </div>
+        <h1 class="glow">
+            One More Request... 🤍
+        </h1>
 
-            </div>
+        <br>
 
-            <button onclick="showFinal()">
-                One Last Thing... ✨
-            </button>
+        <p>
+            Whenever we fight...
+        </p>
 
+        <p>
+            Whenever one of us gets hurt...
+        </p>
+
+        <p>
+            Whenever life becomes difficult...
+        </p>
+
+        <br>
+
+        <h2>
+            Let's not give up on each other.
+        </h2>
+
+        <br>
+
+        <p>
+            Whatever happens,<br>
+            let's talk, understand each other,<br>
+            and keep choosing each other.
+        </p>
+
+        <br>
+
+        <button class="yes" onclick="makePromise()">
+            🤍 I Promise
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     6. FINAL
+===================================== -->
+
+<section id="final" class="screen">
+
+    <div>
+
+        <div class="final-heart">
+            ❤️
         </div>
 
-    </section>
+        <h1 class="glow">
+            Promise Made.
+        </h1>
+
+        <br>
+
+        <p>
+            Happy Birthday, Samentha.
+        </p>
+
+        <p>
+            Thank you for being someone<br>
+            I wanted to make this special for.
+        </p>
+
+        <br>
+
+        <h2>
+            — Tharun 🤍
+        </h2>
+
+        <br>
+
+        <button
+            class="music"
+            onclick="openSong()">
+            🎵 Play Our Song
+        </button>
+
+        <p class="small">
+            Tap the button to listen ❤️
+        </p>
+
+    </div>
+
+</section>
 
 
-    <!-- FINAL PAGE -->
-    <section class="page hidden" id="finalPage">
+<script>
 
-        <div class="card fade">
+/* =====================================
+   SCREEN CONTROL
+===================================== */
 
-            <div class="heart">🌹</div>
+function showScreen(id) {
 
-            <h2>For You, Sametha ❤️</h2>
+    document.querySelectorAll(".screen")
+        .forEach(screen => {
+            screen.classList.remove("active");
+        });
 
-            <p>
-                Whatever happens,
-                don't forget to take care of yourself.
-                <br><br>
-
-                Smile a little.
-                Relax a little.
-                And don't overthink everything.
-                ❤️
-                <br><br>
-
-                I made this little page just hoping
-                it would make your day a little better.
-            </p>
-
-            <div class="signature">
-                With love,<br>
-                Tharun ❤️
-            </div>
-
-            <div class="music-box">
-
-                <p>
-                    And now...
-                    <br>
-                    this song is for you 🎵
-                </p>
-
-                <button onclick="playSong()">
-                    ▶ Play Your Song
-                </button>
-
-                <div id="youtube" class="hidden">
-
-                    <iframe
-                        src="https://www.youtube.com/embed/46-RBvJpPVE?autoplay=1"
-                        title="A song for Sametha"
-                        allow="autoplay; encrypted-media"
-                        allowfullscreen>
-                    </iframe>
-
-                </div>
-
-                <p class="small">
-                    A little song from Tharun ❤️
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
+    document.getElementById(id)
+        .classList.add("active");
+}
 
 
-    <script>
+/* =====================================
+   BIRTHDAY → LOVE
+===================================== */
 
-        function openGift() {
+document.getElementById("birthday")
+    .addEventListener("click", startLove);
 
-            document.getElementById("firstPage").classList.add("hidden");
 
-            document.getElementById("messagePage").classList.remove("hidden");
+/* Prevent accidental double trigger */
 
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+let started = false;
+
+function startLove() {
+
+    if (started) return;
+
+    started = true;
+
+    showScreen("love");
+
+    typeLove();
+}
+
+
+/* =====================================
+   TYPE "I LOVE YOU"
+===================================== */
+
+function typeLove() {
+
+    const text = "I love you 🤍";
+
+    const element =
+        document.getElementById("loveText");
+
+    element.innerHTML = "";
+
+    let index = 0;
+
+    const timer = setInterval(() => {
+
+        element.innerHTML += text[index];
+
+        index++;
+
+        if (index >= text.length) {
+
+            clearInterval(timer);
+
+            setTimeout(() => {
+
+                showScreen("proposal");
+
+            }, 2200);
+
         }
 
+    }, 150);
 
-        function showFinal() {
+}
 
-            document.getElementById("messagePage").classList.add("hidden");
 
-            document.getElementById("finalPage").classList.remove("hidden");
+/* =====================================
+   NO BUTTON
+===================================== */
 
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+function hideNo() {
+
+    const noButton =
+        document.getElementById("noButton");
+
+    noButton.style.transform = "scale(0)";
+    noButton.style.opacity = "0";
+
+    setTimeout(() => {
+
+        noButton.classList.add("hidden");
+
+    }, 400);
+
+}
+
+
+/* =====================================
+   YES → ACCEPTED
+===================================== */
+
+function acceptProposal() {
+
+    showScreen("accepted");
+
+    startCountdown();
+
+}
+
+
+/* =====================================
+   7 SECOND COUNTDOWN
+===================================== */
+
+function startCountdown() {
+
+    let seconds = 7;
+
+    const element =
+        document.getElementById("countdown");
+
+    const timer = setInterval(() => {
+
+        element.innerHTML =
+            "Something else is waiting... " +
+            seconds;
+
+        seconds--;
+
+        if (seconds < 0) {
+
+            clearInterval(timer);
+
+            setTimeout(() => {
+
+                showScreen("promise");
+
+            }, 500);
+
         }
 
+    }, 1000);
 
-        function playSong() {
+}
 
-            document.getElementById("youtube").classList.remove("hidden");
 
-            window.scrollTo({
-                top: document.body.scrollHeight,
-                behavior: "smooth"
-            });
+/* =====================================
+   PROMISE
+===================================== */
 
-        }
+function makePromise() {
 
-    </script>
+    showScreen("final");
+
+}
+
+
+/* =====================================
+   SONG
+===================================== */
+
+function openSong() {
+
+    window.open(
+        "https://www.youtube.com/watch?v=SmXnQZ0Hvjw",
+        "_blank"
+    );
+
+}
+
+
+/* =====================================
+   STARS
+===================================== */
+
+for (let i = 0; i < 90; i++) {
+
+    const star =
+        document.createElement("div");
+
+    star.className = "star";
+
+    star.style.left =
+        Math.random() * 100 + "vw";
+
+    star.style.top =
+        Math.random() * 100 + "vh";
+
+    star.style.animationDelay =
+        Math.random() * 2 + "s";
+
+    document.body.appendChild(star);
+
+}
+
+</script>
 
 </body>
 </html>
+```
